@@ -19,22 +19,28 @@ end
 
 
 def long_planeteer_calls(array_of_calls)
-  i = 0 
-  while i < array_of_calls.length do 
-    if array_of_calls[i].length > 4
-      return true 
-      i += 1 
-    else
-      return false 
-    end
-  end
+   array_of_calls.any?{|calls| calls.length > 4}
 end
+   #this enumerator checks each element (tagged as |calls|) and will return true if any element evaluates to anything OTHER THAN FALSE
+   #OR NIL for the block passed to it. In this case the block checks each elements length to be greater than 4 or not.
 
 
 
 
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
+def find_the_cheese(strings_array)
   cheese_types = ["cheddar", "gouda", "camembert"]
+  i = 0 
+  while i < strings_array.length do 
+    if cheese_types.include? "#{strings_array[i]}"
+      return strings_array[i]
+    end
+    i += 1 
+  end
+  return nil
 end
+
+
+
+ # the array below is here to help
+  cheese_types = ["cheddar", "gouda", "camembert"]
