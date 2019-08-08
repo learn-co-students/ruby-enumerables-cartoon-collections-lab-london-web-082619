@@ -10,20 +10,25 @@ end
 
 
 def summon_captain_planet(planeteer_calls)
-  planeteer_calls.map {|calls|
+  new_array = planeteer_calls.map {|calls| calls.capitalize + "!"}
 end
+#Here you use .map enumerator method to iterate over each element (designated as |calls|) and then you are .capitalize-ing each element and appending ! to each. It is then implicitly returned.
 
 
 
 
 
-
-
-
-def long_planeteer_calls# code an argument here
-  # Your code here
+def long_planeteer_calls(array_of_calls)
+  i = 0 
+  while i < array_of_calls.length do 
+    if array_of_calls[i].length > 4
+      return true 
+      i += 1 
+    else
+      return false 
+    end
+  end
 end
-
 
 
 
